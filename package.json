@@ -1,0 +1,29 @@
+{
+  "name": "debitpay-nodejs",
+  "version": "1.0.0",
+  "description": "Simple app which decodes Bitpay payment links into Bitcoin transaction requirements, so that you could make the payments with Bitcoin wallets not supporting Bitpay.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex Kaul",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cross-env": "^5.1.5",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "handlebars-layouts": "^3.1.4",
+    "hbs": "^4.0.1",
+    "json-payment-protocol": "^0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexk111/DeBitpay-nodejs.git"
+  }
+}

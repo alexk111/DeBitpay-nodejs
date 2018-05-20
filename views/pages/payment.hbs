@@ -1,0 +1,73 @@
+{{#extend "base"}}
+  {{#content "main"}}
+    <div class="container my-3">
+      <h2>Payment Info</h2>
+
+      <div class="form-row">
+        <div class="form-group col-lg">
+          <label>Currency</label>
+          <input type="text" class="form-control form-control-lg" value="{{ paymentData.currency }}" readonly>
+        </div>
+        <div class="form-group col-lg">
+          <label>Fee Rate (sats/byte)</label>
+          <input type="text" class="form-control form-control-lg" value="{{ paymentData.requiredFeeRate }}" readonly>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-lg">
+          <label>Creaated at</label>
+          <input type="text" class="form-control form-control-lg" value="{{ paymentData.time }}" readonly>
+        </div>
+        <div class="form-group col-lg">
+          <label>Expires at</label>
+          <input type="text" class="form-control form-control-lg" value="{{ paymentData.expires }}" readonly>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Memo</label>
+        <textarea class="form-control form-control-lg" readonly>{{ paymentData.memo }}</textarea>
+      </div>
+
+      <h2>Transaction Data</h2>
+      <p>Make the following transaction(s) to complete the payment</p>
+      {{#paymentData.outputs}}
+        <div class="form-row">
+          <div class="form-group col-lg">
+            <label>Amount</label>
+            <div class="input-group">
+              <input type="text" class="form-control form-control-lg" value="{{satsToBTC amount}}" readonly>
+              <div class="input-group-append">
+                <button class="btn btn-clipboard btn-success btn-lg" data-clipboard-text="{{satsToBTC amount}}" title="Copy to clipboard">COPY</button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-lg">
+            <label>Amount in Satoshis</label>
+            <div class="input-group">
+              <input type="text" class="form-control form-control-lg" value="{{amount}}" readonly>
+              <div class="input-group-append">
+                <button class="btn btn-clipboard btn-success btn-lg" data-clipboard-text="{{amount}}" title="Copy to clipboard">COPY</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Address</label>
+          <div class="input-group">
+            <input type="text" class="form-control form-control-lg" value="{{address}}" readonly>
+            <div class="input-group-append">
+              <button class="btn btn-clipboard btn-success btn-lg" data-clipboard-text="{{address}}" title="Copy to clipboard">COPY</button>
+            </div>
+          </div>
+        </div>
+      {{/paymentData.outputs}}
+
+      <a class="btn btn-lg btn-secondary" href="/">Go Back</a>
+
+      <hr>
+    </div>
+
+  {{/content}}
+{{/extend}}

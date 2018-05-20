@@ -1,0 +1,20 @@
+{{#extend "base"}}
+  {{#content "main"}}
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">DeBitpay</h1>
+          <p class="lead">Does your Bitcoin wallet not support Bitpay payments? DeBitpay is a simple app which decodes Bitpay payment links into Bitcoin transaction requirements, so that you could make the payments with Bitcoin wallets not supporting Bitpay.</p>
+        <p>Push Copy Payment URL button on Bitpay invoice page or copy the invoice page url, and paste it below to get the transaction requirements.</p>
+        <div>
+          <form method="POST" action="/">
+            <div class="form-group">
+              <label for="txtBitpayLink">Payment URL or Bitpay Invoice Page URL</label>
+              <input type="text" class="form-control form-control-lg" id="txtBitpayLink" name="bitpayLink" placeholder="Example: bitcoin:?r=https://bitpay.com/i/ABCDEFGHIJKLMNOPQ12345">
+            </div>
+            <button type="submit" class="btn btn-success btn-lg">Get Transaction Requirements</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  {{/content}}
+{{/extend}}
